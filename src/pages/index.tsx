@@ -1,5 +1,8 @@
-import React from "react";
+import * as React from "react";
+import Header from "components/Header/Header";
 
-export default function Page(): JSX.Element {
-  return <h1>Hello, Next.js!</h1>;
-}
+const Home = () => {
+  return <Header />;
+};
+
+export default Home;
