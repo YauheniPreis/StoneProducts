@@ -1,7 +1,9 @@
 import React from "react";
+
 import type { AppProps } from "next/app";
+
 import { AppCacheProvider } from "@mui/material-nextjs/v14-pagesRouter";
-import { createTheme, Theme } from "@mui/material/styles";
+import { Theme, createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@mui/styles";
 
 declare module "@mui/styles/defaultTheme" {

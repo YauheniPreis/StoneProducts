@@ -3,8 +3,17 @@
   "printWidth": 80,
   "tabWidth": 2,
   "trailingComma": "es5",
-  "importOrder": ["^components/(.*)$", "^[./]"],
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
+  "importOrder": [
+    "^(react/(.*)$)|^(react$)",
+    "^(next/(.*)$)|^(next$)",
+    "<THIRD_PARTY_MODULES>",
+    "^pages/(.*)$",
+    "^components/(.*)$",
+    "^constants/(.*)$",
+    "^assets/(.*)$",
+    "^[./]"
+  ],
   "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true,
-  "importOrderGroupNamespaceSpecifiers": true
+  "importOrderSortSpecifiers": true
 }

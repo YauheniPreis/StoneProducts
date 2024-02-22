@@ -1,4 +1,9 @@
 import React, { useState } from "react";
+
+import NextImage from "next/image";
+import { useRouter } from "next/router";
+
+import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import {
   AppBar,
   Box,
@@ -12,13 +17,12 @@ import {
   useTheme,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
-import {
-  FEEDBACK_BUTTON_TEXT,
-  PAGES,
-  PHONE_NUMBER,
-} from "constants/common.constants";
+
 import Sidebar from "components/Sidebar/Sidebar";
+
+import { FEEDBACK_BUTTON_TEXT, PAGES } from "constants/common.constants";
+
+import logoImage from "assets/logo.jpg";
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -46,39 +50,11 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "13px",
     },
   },
-  feedback: {
-    marginLeft: "auto",
-    display: "flex",
-    alignItems: "center",
-    [theme.breakpoints.up("md")]: {
-      flexDirection: "row",
-    },
-    [theme.breakpoints.down("md")]: {
-      flexDirection: "column",
-    },
-  },
-  callNumber: {
-    fontSize: "17px",
-    fontWeight: 600,
-    lineHeight: "23px",
-    color: "#000",
-    [theme.breakpoints.down("lg")]: {
-      fontSize: "15px",
-    },
-  },
   button: {
-    marginLeft: "37px",
+    marginLeft: "auto",
     borderRadius: "5px",
-    backgroundColor: "#ed1a1a",
-    "&:hover": {
-      backgroundColor: "#61ab16",
-    },
-    [theme.breakpoints.between("md", "lg")]: {
-      marginLeft: "20px",
-    },
     [theme.breakpoints.down("md")]: {
       marginTop: "5px",
-      marginLeft: "0",
     },
   },
   buttonText: {
@@ -93,12 +69,19 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "auto",
     color: "#000",
   },
+  logo: {
+    marginRight: "10px",
+    position: "relative",
+    height: "58px",
+    minWidth: "85px",
+  },
 }));
 
 const Header = () => {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(false);
   const [openDrawer, setOpenDrawer] = useState(false);
 
+  const router = useRouter();
   const theme = useTheme();
   const classes = useStyles();
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
@@ -106,28 +89,10 @@ const Header = () => {
   return (
     <AppBar className={classes.header}>
       <Toolbar className={classes.toolBar}>
-        {!isMatch && (
-          <Tabs
-            TabIndicatorProps={{
-              style: { display: "none" },
-            }}
-            value={value}
-            onChange={(e, value) => setValue(value)}
-          >
-            {PAGES.map((page, index) => (
-              <Tab key={index} className={classes.tab} label={page} />
-            ))}
-          </Tabs>
-        )}
-        <Box className={classes.feedback}>
-          <Typography className={classes.callNumber}>{PHONE_NUMBER}</Typography>
-          <Button className={classes.button} variant="contained" size="large">
-            <Typography className={classes.buttonText}>
-              {FEEDBACK_BUTTON_TEXT}
-            </Typography>
-          </Button>
+        <Box className={classes.logo}>
+          <NextImage src={logoImage} fill alt="logo" />
         </Box>
-        {isMatch && (
+        {isMatch ? (
           <>
             <Sidebar
               showSidebar={openDrawer}
@@ -139,6 +104,35 @@ const Header = () => {
             >
               <MenuRoundedIcon fontSize="large" />
             </IconButton>
+          </>
+        ) : (
+          <>
+            <Tabs
+              TabIndicatorProps={{
+                style: { display: "none" },
+              }}
+              value={value}
+              onChange={(e, value) => setValue(value)}
+            >
+              {PAGES.map((page, index) => (
+                <Tab
+                  key={index}
+                  className={classes.tab}
+                  label={page.title}
+                  onClick={() => router.push(page.link)}
+                />
+              ))}
+            </Tabs>
+            <Button
+              className={classes.button}
+              variant="contained"
+              size="large"
+              color="error"
+            >
+              <Typography className={classes.buttonText}>
+                {FEEDBACK_BUTTON_TEXT}
+              </Typography>
+            </Button>
           </>
         )}
       </Toolbar>
