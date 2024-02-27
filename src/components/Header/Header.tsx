@@ -16,7 +16,6 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { makeStyles } from "@mui/styles";
 
 import Sidebar from "components/Sidebar/Sidebar";
 
@@ -24,58 +23,7 @@ import { FEEDBACK_BUTTON_TEXT, PAGES } from "constants/common.constants";
 
 import logoImage from "assets/logo.jpg";
 
-const useStyles = makeStyles((theme) => ({
-  header: {
-    display: "flex",
-    justifyContent: "center",
-    height: "84px",
-    width: "100%",
-    backgroundColor: "#fff",
-  },
-  toolBar: {
-    padding: "0 20px",
-    [theme.breakpoints.down("lg")]: {
-      padding: "0 15px",
-    },
-  },
-  tab: {
-    fontSize: "15px",
-    fontWeight: 600,
-    color: "#000",
-    "&.Mui-selected": {
-      color: "#ed1a1a",
-    },
-    [theme.breakpoints.down("lg")]: {
-      padding: "4px 8px",
-      fontSize: "13px",
-    },
-  },
-  button: {
-    marginLeft: "auto",
-    borderRadius: "5px",
-    [theme.breakpoints.down("md")]: {
-      marginTop: "5px",
-    },
-  },
-  buttonText: {
-    fontSize: "15px",
-    fontWeight: 700,
-    color: "#ffffff",
-    [theme.breakpoints.down("lg")]: {
-      fontSize: "13px",
-    },
-  },
-  iconButton: {
-    marginLeft: "auto",
-    color: "#000",
-  },
-  logo: {
-    marginRight: "10px",
-    position: "relative",
-    height: "58px",
-    minWidth: "85px",
-  },
-}));
+import { useStyles } from "./styles";
 
 const Header = () => {
   const [value, setValue] = useState(false);
@@ -87,7 +35,7 @@ const Header = () => {
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <AppBar className={classes.header}>
+    <AppBar position="relative" className={classes.header}>
       <Toolbar className={classes.toolBar}>
         <Box className={classes.logo}>
           <NextImage src={logoImage} fill alt="logo" />
