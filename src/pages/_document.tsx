@@ -1,11 +1,6 @@
 import React from "react";
 
 import {
-  DocumentHeadTags,
-  documentGetInitialProps,
-} from "@mui/material-nextjs/v14-pagesRouter";
-import type { DocumentHeadTagsProps } from "@mui/material-nextjs/v14-pagesRouter";
-import {
   DocumentContext,
   DocumentProps,
   Head,
@@ -13,6 +8,12 @@ import {
   Main,
   NextScript,
 } from "next/document";
+
+import {
+  DocumentHeadTags,
+  documentGetInitialProps,
+} from "@mui/material-nextjs/v14-pagesRouter";
+import type { DocumentHeadTagsProps } from "@mui/material-nextjs/v14-pagesRouter";
 
 const Document = (props: DocumentProps & DocumentHeadTagsProps) => {
   return (

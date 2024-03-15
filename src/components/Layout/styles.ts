@@ -7,7 +7,10 @@ const useStyles = makeStyles(() => ({
     minHeight: "100vh",
   },
   main: {
+    display: "flex",
     flexGrow: 1,
+    justifyContent: "center",
+    alignItems: "center",
   },
 }));
 

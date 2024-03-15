@@ -27,10 +27,11 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   button: {
+    display: "inline-flex",
     marginLeft: "auto",
     borderRadius: "5px",
     [theme.breakpoints.down("md")]: {
-      marginTop: "5px",
+      display: "none",
     },
   },
   buttonText: {
@@ -41,9 +42,19 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "13px",
     },
   },
+  tabs: {
+    display: "flex",
+    [theme.breakpoints.down("md")]: {
+      display: "none",
+    },
+  },
   iconButton: {
+    display: "block",
     marginLeft: "auto",
     color: "#000",
+    [theme.breakpoints.up("md")]: {
+      display: "none",
+    },
   },
   logo: {
     marginRight: "10px",

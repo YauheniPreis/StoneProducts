@@ -13,8 +13,6 @@ import {
   Tabs,
   Toolbar,
   Typography,
-  useMediaQuery,
-  useTheme,
 } from "@mui/material";
 
 import Sidebar from "components/Sidebar/Sidebar";
@@ -30,9 +28,7 @@ const Header = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
 
   const router = useRouter();
-  const theme = useTheme();
   const classes = useStyles();
-  const isMatch = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <AppBar position="relative" className={classes.header}>
@@ -40,49 +36,45 @@ const Header = () => {
         <Box className={classes.logo}>
           <NextImage src={logoImage} fill alt="logo" />
         </Box>
-        {isMatch ? (
-          <>
-            <Sidebar
-              showSidebar={openDrawer}
-              onSidebarClick={() => setOpenDrawer(false)}
+
+        <Sidebar
+          showSidebar={openDrawer}
+          onSidebarClick={() => setOpenDrawer(false)}
+        />
+        <IconButton
+          className={classes.iconButton}
+          onClick={() => setOpenDrawer(!openDrawer)}
+        >
+          <MenuRoundedIcon fontSize="large" />
+        </IconButton>
+
+        <Tabs
+          className={classes.tabs}
+          TabIndicatorProps={{
+            style: { display: "none" },
+          }}
+          value={value}
+          onChange={(e, value) => setValue(value)}
+        >
+          {PAGES.map((page, index) => (
+            <Tab
+              key={index}
+              className={classes.tab}
+              label={page.title}
+              onClick={() => router.push(page.link)}
             />
-            <IconButton
-              className={classes.iconButton}
-              onClick={() => setOpenDrawer(!openDrawer)}
-            >
-              <MenuRoundedIcon fontSize="large" />
-            </IconButton>
-          </>
-        ) : (
-          <>
-            <Tabs
-              TabIndicatorProps={{
-                style: { display: "none" },
-              }}
-              value={value}
-              onChange={(e, value) => setValue(value)}
-            >
-              {PAGES.map((page, index) => (
-                <Tab
-                  key={index}
-                  className={classes.tab}
-                  label={page.title}
-                  onClick={() => router.push(page.link)}
-                />
-              ))}
-            </Tabs>
-            <Button
-              className={classes.button}
-              variant="contained"
-              size="large"
-              color="error"
-            >
-              <Typography className={classes.buttonText}>
-                {FEEDBACK_BUTTON_TEXT}
-              </Typography>
-            </Button>
-          </>
-        )}
+          ))}
+        </Tabs>
+        <Button
+          className={classes.button}
+          variant="contained"
+          size="large"
+          color="error"
+        >
+          <Typography className={classes.buttonText}>
+            {FEEDBACK_BUTTON_TEXT}
+          </Typography>
+        </Button>
       </Toolbar>
     </AppBar>
   );
