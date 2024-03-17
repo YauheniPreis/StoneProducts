@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import type { AppProps } from "next/app";
 
@@ -16,9 +16,17 @@ declare module "@mui/styles/defaultTheme" {
 
 const theme = createTheme();
 
-const App = ({ Component, pageProps }: AppProps) => {
+const App = ({ Component, pageProps, ...props }: AppProps) => {
+  useEffect(() => {
+    // Remove the server-side injected CSS.
+    const jssStyles = document.querySelector("#jss-server-side");
+    if (jssStyles) {
+      jssStyles?.parentElement?.removeChild(jssStyles);
+    }
+  }, []);
+
   return (
-    <AppCacheProvider {...pageProps}>
+    <AppCacheProvider {...props}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Layout>
