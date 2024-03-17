@@ -1,5 +1,7 @@
 import React from "react";
 
+import { useRouter } from "next/router";
+
 import CloseIcon from "@mui/icons-material/Close";
 import {
   Box,
@@ -22,6 +24,7 @@ interface ISidebarProps {
 
 const Sidebar = ({ showSidebar, onSidebarClick }: ISidebarProps) => {
   const classes = useStyles();
+  const router = useRouter();
 
   return (
     <React.Fragment>
@@ -37,7 +40,11 @@ const Sidebar = ({ showSidebar, onSidebarClick }: ISidebarProps) => {
 
         <List className={classes.list}>
           {PAGES.map((page, index) => (
-            <ListItemButton key={index} className={classes.listItemButton}>
+            <ListItemButton
+              key={index}
+              className={classes.listItemButton}
+              onClick={() => router.push(page.link)}
+            >
               <Typography className={classes.listItemText}>
                 {page.title}
               </Typography>

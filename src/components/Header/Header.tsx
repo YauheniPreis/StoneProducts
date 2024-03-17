@@ -34,7 +34,12 @@ const Header = () => {
     <AppBar position="relative" className={classes.header}>
       <Toolbar className={classes.toolBar}>
         <Box className={classes.logo}>
-          <NextImage src={logoImage} fill alt="logo" />
+          <NextImage
+            src={logoImage}
+            fill
+            alt="logo"
+            onClick={() => router.push("/")}
+          />
         </Box>
 
         <Sidebar
