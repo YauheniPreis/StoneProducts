@@ -15,6 +15,7 @@ import {
   Typography,
 } from "@mui/material";
 
+import FeedbackModal from "components/FeedbackModal/FeedbackModal";
 import Sidebar from "components/Sidebar/Sidebar";
 
 import { FEEDBACK_BUTTON_TEXT, PAGES } from "constants/common.constants";
@@ -26,62 +27,67 @@ import { useStyles } from "./styles";
 const Header = () => {
   const [value, setValue] = useState(false);
   const [openDrawer, setOpenDrawer] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   const router = useRouter();
   const classes = useStyles();
 
   return (
-    <AppBar position="relative" className={classes.header}>
-      <Toolbar className={classes.toolBar}>
-        <Box className={classes.logo}>
-          <NextImage
-            src={logoImage}
-            fill
-            alt="logo"
-            onClick={() => router.push("/")}
-          />
-        </Box>
-
-        <Sidebar
-          showSidebar={openDrawer}
-          onSidebarClick={() => setOpenDrawer(false)}
-        />
-        <IconButton
-          className={classes.iconButton}
-          onClick={() => setOpenDrawer(!openDrawer)}
-        >
-          <MenuRoundedIcon fontSize="large" />
-        </IconButton>
-
-        <Tabs
-          className={classes.tabs}
-          TabIndicatorProps={{
-            style: { display: "none" },
-          }}
-          value={value}
-          onChange={(e, value) => setValue(value)}
-        >
-          {PAGES.map((page, index) => (
-            <Tab
-              key={index}
-              className={classes.tab}
-              label={page.title}
-              onClick={() => router.push(page.link)}
+    <>
+      <AppBar position="relative" className={classes.header}>
+        <Toolbar className={classes.toolBar}>
+          <Box className={classes.logo}>
+            <NextImage
+              src={logoImage}
+              fill
+              alt="logo"
+              onClick={() => router.push("/")}
             />
-          ))}
-        </Tabs>
-        <Button
-          className={classes.button}
-          variant="contained"
-          size="large"
-          color="error"
-        >
-          <Typography className={classes.buttonText}>
-            {FEEDBACK_BUTTON_TEXT}
-          </Typography>
-        </Button>
-      </Toolbar>
-    </AppBar>
+          </Box>
+
+          <Sidebar
+            showSidebar={openDrawer}
+            onSidebarClick={() => setOpenDrawer(false)}
+          />
+          <IconButton
+            className={classes.iconButton}
+            onClick={() => setOpenDrawer(!openDrawer)}
+          >
+            <MenuRoundedIcon fontSize="large" />
+          </IconButton>
+
+          <Tabs
+            className={classes.tabs}
+            TabIndicatorProps={{
+              style: { display: "none" },
+            }}
+            value={value}
+            onChange={(e, value) => setValue(value)}
+          >
+            {PAGES.map((page, index) => (
+              <Tab
+                key={index}
+                className={classes.tab}
+                label={page.title}
+                onClick={() => router.push(page.link)}
+              />
+            ))}
+          </Tabs>
+          <Button
+            className={classes.button}
+            variant="contained"
+            size="large"
+            color="error"
+            onClick={() => setOpenModal(true)}
+          >
+            <Typography className={classes.buttonText}>
+              {FEEDBACK_BUTTON_TEXT}
+            </Typography>
+          </Button>
+        </Toolbar>
+      </AppBar>
+      <FeedbackModal open={openModal} onClose={() => setOpenModal(false)} />
+    </>
   );
 };
 

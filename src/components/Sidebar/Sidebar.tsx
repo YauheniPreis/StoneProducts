@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { useRouter } from "next/router";
 
@@ -13,6 +13,8 @@ import {
   Typography,
 } from "@mui/material";
 
+import FeedbackModal from "components/FeedbackModal/FeedbackModal";
+
 import { FEEDBACK_BUTTON_TEXT, PAGES } from "constants/common.constants";
 
 import { useStyles } from "./styles";
@@ -23,6 +25,8 @@ interface ISidebarProps {
 }
 
 const Sidebar = ({ showSidebar, onSidebarClick }: ISidebarProps) => {
+  const [openModal, setOpenModal] = useState(false);
+
   const classes = useStyles();
   const router = useRouter();
 
@@ -58,6 +62,7 @@ const Sidebar = ({ showSidebar, onSidebarClick }: ISidebarProps) => {
             variant="contained"
             size="large"
             color="error"
+            onClick={() => setOpenModal(true)}
           >
             <Typography className={classes.footerButtoText}>
               {FEEDBACK_BUTTON_TEXT}
@@ -65,6 +70,7 @@ const Sidebar = ({ showSidebar, onSidebarClick }: ISidebarProps) => {
           </Button>
         </Box>
       </Drawer>
+      <FeedbackModal open={openModal} onClose={() => setOpenModal(false)} />
     </React.Fragment>
   );
 };
