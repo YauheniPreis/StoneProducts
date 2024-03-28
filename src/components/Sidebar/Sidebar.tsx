@@ -30,6 +30,20 @@ const Sidebar = ({ showSidebar, onSidebarClick }: ISidebarProps) => {
   const classes = useStyles();
   const router = useRouter();
 
+  const handleNavigate = (link: string) => {
+    router.push(link);
+    onSidebarClick();
+  };
+
+  const handleOpenModal = () => {
+    setOpenModal(true);
+    onSidebarClick();
+  };
+
+  const handleCloseModal = () => {
+    setOpenModal(false);
+  };
+
   return (
     <React.Fragment>
       <Drawer
@@ -47,7 +61,7 @@ const Sidebar = ({ showSidebar, onSidebarClick }: ISidebarProps) => {
             <ListItemButton
               key={index}
               className={classes.listItemButton}
-              onClick={() => router.push(page.link)}
+              onClick={() => handleNavigate(page.link)}
             >
               <Typography className={classes.listItemText}>
                 {page.title}
@@ -62,7 +76,7 @@ const Sidebar = ({ showSidebar, onSidebarClick }: ISidebarProps) => {
             variant="contained"
             size="large"
             color="error"
-            onClick={() => setOpenModal(true)}
+            onClick={handleOpenModal}
           >
             <Typography className={classes.footerButtoText}>
               {FEEDBACK_BUTTON_TEXT}
@@ -70,7 +84,7 @@ const Sidebar = ({ showSidebar, onSidebarClick }: ISidebarProps) => {
           </Button>
         </Box>
       </Drawer>
-      <FeedbackModal open={openModal} onClose={() => setOpenModal(false)} />
+      <FeedbackModal open={openModal} onClose={handleCloseModal} />
     </React.Fragment>
   );
 };

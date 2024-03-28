@@ -10,7 +10,12 @@ import {
   IconButton,
   Stack,
   TextField,
+  Typography,
+  useMediaQuery,
 } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+
+import { useStyles } from "./styles";
 
 interface IFeedbackModalProps {
   open: boolean;
@@ -18,16 +23,24 @@ interface IFeedbackModalProps {
 }
 
 const FeedbackModal = ({ open, onClose }: IFeedbackModalProps) => {
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const classes = useStyles();
+
   return (
-    <Dialog open={open} onClose={onClose} fullWidth maxWidth="md">
-      <DialogTitle>
-        Обратный звонок{" "}
-        <IconButton style={{ float: "right" }} onClick={onClose}>
-          <CloseIcon color="primary"></CloseIcon>
-        </IconButton>
-      </DialogTitle>
+    <Dialog
+      open={open}
+      onClose={onClose}
+      fullScreen={fullScreen}
+      fullWidth
+      maxWidth="md"
+    >
+      <IconButton className={classes.closeButton} onClick={onClose}>
+        <CloseIcon fontSize="large"></CloseIcon>
+      </IconButton>
+      <DialogTitle className={classes.title}>Обратный звонок</DialogTitle>
       <DialogContent>
-        <DialogContentText>
+        <DialogContentText className={classes.description}>
           Просто оставьте контакты и мы с вами свяжемся в ближайшее время!
         </DialogContentText>
         <Stack spacing={4} margin={4}>
@@ -36,8 +49,14 @@ const FeedbackModal = ({ open, onClose }: IFeedbackModalProps) => {
             variant="outlined"
           ></TextField>
           <TextField label="Номер телефона" variant="outlined"></TextField>
-          <Button type="submit" variant="contained">
-            Отправить
+          <Button
+            className={classes.button}
+            type="submit"
+            variant="contained"
+            size="large"
+            color="error"
+          >
+            <Typography className={classes.buttonText}>Отправить</Typography>
           </Button>
         </Stack>
       </DialogContent>
