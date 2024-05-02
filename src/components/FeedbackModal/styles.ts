@@ -8,20 +8,51 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 600,
     textTransform: "uppercase",
     letterSpacing: "0.5px",
+    lineHeight: 1.23,
     [theme.breakpoints.down("sm")]: {
+      padding: "20px 20px 0",
+      marginBottom: "6px",
       fontSize: "28px",
     },
   },
   closeButton: {
     margin: "5px 5px 0 auto",
+    [theme.breakpoints.down("sm")]: {
+      padding: 0,
+    },
+  },
+  closeIcon: {
+    height: "50px",
+    width: "50px",
     color: "#000",
+    [theme.breakpoints.down("sm")]: {
+      height: "40px",
+      width: "40px",
+    },
+  },
+  content: {
+    padding: "0 24px 20px",
+    [theme.breakpoints.down("sm")]: {
+      padding: "0 20px 20px",
+    },
   },
   description: {
-    margin: "0 30px",
     textAlign: "center",
     fontSize: "16px",
-    fontWeight: 400,
+    fontWeight: 300,
     color: "#000",
+    lineHeight: 1.55,
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "12px",
+      lineHeight: 1.45,
+    },
+  },
+  form: {
+    margin: "20px",
+    [theme.breakpoints.down("sm")]: {
+      margin: "0",
+      marginTop: "14px",
+    },
   },
   button: {
     height: "54px",

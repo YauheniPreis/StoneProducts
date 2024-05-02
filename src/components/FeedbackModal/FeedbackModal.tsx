@@ -36,14 +36,14 @@ const FeedbackModal = ({ open, onClose }: IFeedbackModalProps) => {
       maxWidth="md"
     >
       <IconButton className={classes.closeButton} onClick={onClose}>
-        <CloseIcon fontSize="large"></CloseIcon>
+        <CloseIcon className={classes.closeIcon}></CloseIcon>
       </IconButton>
       <DialogTitle className={classes.title}>Обратный звонок</DialogTitle>
-      <DialogContent>
+      <DialogContent className={classes.content}>
         <DialogContentText className={classes.description}>
           Просто оставьте контакты и мы с вами свяжемся в ближайшее время!
         </DialogContentText>
-        <Stack spacing={4} margin={4}>
+        <Stack className={classes.form} spacing={4}>
           <TextField
             label="Как к Вам обращаться?"
             variant="outlined"
