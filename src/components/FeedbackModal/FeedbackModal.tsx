@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import CloseIcon from "@mui/icons-material/Close";
 import {
@@ -27,6 +27,30 @@ const FeedbackModal = ({ open, onClose }: IFeedbackModalProps) => {
   const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const classes = useStyles();
 
+  const [name, setName] = useState<string>("");
+  const [phoneNumber, setPhoneNumber] = useState<string>("");
+
+  const sendEmail = async () => {
+    const formValues = { name, phoneNumber };
+
+    let result;
+    try {
+      const data = await fetch("/api/email", {
+        method: "POST",
+        body: JSON.stringify(formValues),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
+      result = await data.json();
+    } catch (error) {
+      result = { message: `Failed: ${error}` };
+    }
+
+    alert(result.message);
+  };
+
   return (
     <Dialog
       open={open}
@@ -47,14 +71,22 @@ const FeedbackModal = ({ open, onClose }: IFeedbackModalProps) => {
           <TextField
             label="Как к Вам обращаться?"
             variant="outlined"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
           ></TextField>
-          <TextField label="Номер телефона" variant="outlined"></TextField>
+          <TextField
+            label="Номер телефона"
+            variant="outlined"
+            value={phoneNumber}
+            onChange={(event) => setPhoneNumber(event.target.value)}
+          ></TextField>
           <Button
             className={classes.button}
             type="submit"
             variant="contained"
             size="large"
             color="error"
+            onClick={sendEmail}
           >
             <Typography className={classes.buttonText}>Отправить</Typography>
           </Button>
