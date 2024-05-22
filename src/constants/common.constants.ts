@@ -19,6 +19,7 @@ export const EMAIL_TEXT = "yauheni.preis@gmail.com";
 export const OPERATING_MODE_TITLE = "Режим работы";
 export const OPERATING_MODE_TEXT = "Пн-Пт с 09:00 до 19:00";
 export const COPYRIGHT_TEXT = "Copyright © 2024 Sigma Stone";
+export const ABOUT_TITLE = "Наши Работы";
 export const ABOUT_IMAGES = [
   {
     label: "about-1.jpeg",
@@ -61,6 +62,7 @@ export const ABOUT_IMAGES = [
     imgPath: "/about/about-10.jpeg",
   },
 ];
+export const PRODUCTS_KITCHEN_TITLE = "Кухня";
 export const PRODUCTS_KITCHEN_IMAGES = [
   {
     label: "kitchen-1.jpeg",
@@ -145,5 +147,74 @@ export const PRODUCTS_KITCHEN_IMAGES = [
   {
     label: "kitchen-21.jpeg",
     imgPath: "/products/kitchen/kitchen-21.jpeg",
+  },
+];
+export const PRODUCTS_BAR_COUNTER_TITLE = "Барные стойки";
+export const PRODUCTS_BAR_COUNTER_IMAGES = [
+  {
+    label: "bar-counter-1.jpeg",
+    imgPath: "/products/bar-counter/bar-counter-1.jpeg",
+  },
+  {
+    label: "bar-counter-2.jpeg",
+    imgPath: "/products/bar-counter/bar-counter-2.jpeg",
+  },
+  {
+    label: "bar-counter-3.jpeg",
+    imgPath: "/products/bar-counter/bar-counter-3.jpeg",
+  },
+];
+export const PRODUCTS_BATHROOM_TITLE = "Ванная комната";
+export const PRODUCTS_BATHROOM_IMAGES = [
+  {
+    label: "bathroom-1.jpeg",
+    imgPath: "/products/bathroom/bathroom-1.jpeg",
+  },
+  {
+    label: "bathroom-2.jpeg",
+    imgPath: "/products/bathroom/bathroom-2.jpeg",
+  },
+  {
+    label: "bathroom-3.jpeg",
+    imgPath: "/products/bathroom/bathroom-3.jpeg",
+  },
+  {
+    label: "bathroom-4.jpeg",
+    imgPath: "/products/bathroom/bathroom-4.jpeg",
+  },
+  {
+    label: "bathroom-5.jpeg",
+    imgPath: "/products/bathroom/bathroom-5.jpeg",
+  },
+  {
+    label: "bathroom-6.jpeg",
+    imgPath: "/products/bathroom/bathroom-6.jpeg",
+  },
+];
+export const PRODUCTS_WINDOW_SILLS_TITLE = "Подоконники";
+export const PRODUCTS_WINDOW_SILLS_IMAGES = [
+  {
+    label: "window-sills-1.jpeg",
+    imgPath: "/products/window-sills/window-sills-1.jpeg",
+  },
+  {
+    label: "window-sills-2.jpeg",
+    imgPath: "/products/window-sills/window-sills-2.jpeg",
+  },
+  {
+    label: "window-sills-3.jpeg",
+    imgPath: "/products/window-sills/window-sills-3.jpeg",
+  },
+  {
+    label: "window-sills-4.jpeg",
+    imgPath: "/products/window-sills/window-sills-4.jpeg",
+  },
+  {
+    label: "window-sills-5.jpeg",
+    imgPath: "/products/window-sills/window-sills-5.jpeg",
+  },
+  {
+    label: "window-sills-6.jpeg",
+    imgPath: "/products/window-sills/window-sills-6.jpeg",
   },
 ];
