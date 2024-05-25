@@ -22,19 +22,19 @@ interface IImageSwiperProps {
 const ImageSwiper = ({ images, title }: IImageSwiperProps) => {
   const theme = useTheme();
   const classes = useStyles();
-  const [activeStep, setActiveStep] = useState(0);
+  const [activeStep, setActiveStep] = useState<number>(0);
 
   const maxSteps = images.length;
 
-  const handleNext = () => {
+  const handleNext = (): void => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 
-  const handleBack = () => {
+  const handleBack = (): void => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
-  const handleStepChange = (step: number) => {
+  const handleStepChange = (step: number): void => {
     setActiveStep(step);
   };
 

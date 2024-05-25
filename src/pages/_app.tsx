@@ -19,7 +19,8 @@ const theme = createTheme();
 const App = ({ Component, pageProps, ...props }: AppProps) => {
   useEffect(() => {
     // Remove the server-side injected CSS.
-    const jssStyles = document.querySelector("#jss-server-side");
+    const jssStyles: Element | null =
+      document.querySelector("#jss-server-side");
     if (jssStyles) {
       jssStyles?.parentElement?.removeChild(jssStyles);
     }

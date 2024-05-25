@@ -30,7 +30,7 @@ const FeedbackModal = ({ open, onClose }: IFeedbackModalProps) => {
   const [name, setName] = useState<string>("");
   const [phoneNumber, setPhoneNumber] = useState<string>("");
 
-  const sendEmail = async () => {
+  const sendEmail = async (): Promise<void> => {
     const formValues = { name, phoneNumber };
 
     let result;

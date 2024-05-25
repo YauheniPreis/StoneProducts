@@ -25,22 +25,22 @@ interface ISidebarProps {
 }
 
 const Sidebar = ({ showSidebar, onSidebarClick }: ISidebarProps) => {
-  const [openModal, setOpenModal] = useState(false);
+  const [openModal, setOpenModal] = useState<boolean>(false);
 
   const classes = useStyles();
   const router = useRouter();
 
-  const handleNavigate = (link: string) => {
+  const handleNavigate = (link: string): void => {
     router.push(link);
     onSidebarClick();
   };
 
-  const handleOpenModal = () => {
+  const handleOpenModal = (): void => {
     setOpenModal(true);
     onSidebarClick();
   };
 
-  const handleCloseModal = () => {
+  const handleCloseModal = (): void => {
     setOpenModal(false);
   };
 

@@ -26,8 +26,8 @@ import { useStyles } from "./styles";
 
 const Header = () => {
   const [value, setValue] = useState(false);
-  const [openDrawer, setOpenDrawer] = useState(false);
-  const [openModal, setOpenModal] = useState(false);
+  const [openDrawer, setOpenDrawer] = useState<boolean>(false);
+  const [openModal, setOpenModal] = useState<boolean>(false);
 
   const router = useRouter();
   const classes = useStyles();
