@@ -32,6 +32,11 @@ const Header = () => {
   const router = useRouter();
   const classes = useStyles();
 
+  const handleOnClickImage = (): void => {
+    setValue(false);
+    router.push("/");
+  };
+
   return (
     <>
       <AppBar position="relative" className={classes.header}>
@@ -41,7 +46,7 @@ const Header = () => {
               src={logoImage}
               fill
               alt="logo"
-              onClick={() => router.push("/")}
+              onClick={handleOnClickImage}
             />
           </Box>
 
