@@ -19,6 +19,10 @@ export const EMAIL_TEXT = "prokamny@gmail.com";
 export const OPERATING_MODE_TITLE = "Режим работы";
 export const OPERATING_MODE_TEXT = "Пн-Пт с 09:00 до 19:00";
 export const COPYRIGHT_TEXT = "Copyright © 2024 Sigma Stone";
+export const MAIN_IMAGE = {
+  label: "main.jpeg",
+  imgPath: "/main.jpeg",
+};
 export const ABOUT_TITLE = "Наши Работы";
 export const ABOUT_IMAGES = [
   {

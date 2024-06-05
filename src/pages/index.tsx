@@ -1,11 +1,14 @@
 import React from "react";
 
+import Image from "next/image";
+
 import { Box, Button, List, ListItem, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
 import {
   BENEFITS,
   CALCULATE_COST_BUTTON_TEXT,
+  MAIN_IMAGE,
   MAIN_TITLE,
 } from "constants/common.constants";
 
@@ -27,6 +30,9 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     width: "50%",
     height: "100%",
+  },
+  image: {
+    position: "relative !important" as any,
   },
   contentContainer: {
     padding: "20px 40px",
@@ -97,7 +103,15 @@ const Home = () => {
 
   return (
     <Box className={classes.homeContainer}>
-      <Box className={classes.imageContainer}></Box>
+      <Box className={classes.imageContainer}>
+        <Image
+          className={classes.image}
+          src={MAIN_IMAGE.imgPath}
+          alt={MAIN_IMAGE.label}
+          objectFit="contain"
+          fill
+        />
+      </Box>
 
       <Box className={classes.contentContainer}>
         <Typography className={classes.title}>{MAIN_TITLE}</Typography>
