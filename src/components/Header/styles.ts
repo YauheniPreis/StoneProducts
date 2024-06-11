@@ -42,6 +42,34 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "13px",
     },
   },
+  contactsInfoWrapper: {
+    display: "flex",
+    flexDirection: "column",
+  },
+  contactsInfo: {
+    marginLeft: "16px",
+    display: "flex",
+    alignItems: "center",
+    gap: "10px",
+    [theme.breakpoints.down("lg")]: {
+      marginLeft: "0",
+      gap: "0",
+    },
+    [theme.breakpoints.down("md")]: {
+      display: "none",
+    },
+  },
+  contactsInfoLink: {
+    textDecoration: "none",
+  },
+  contactsInfoText: {
+    fontSize: "15px",
+    fontWeight: 600,
+    [theme.breakpoints.down("lg")]: {
+      padding: "4px 8px",
+      fontSize: "13px",
+    },
+  },
   tabs: {
     display: "flex",
     [theme.breakpoints.down("md")]: {

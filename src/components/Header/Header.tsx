@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import NextImage from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
@@ -18,7 +19,12 @@ import {
 import FeedbackModal from "components/FeedbackModal/FeedbackModal";
 import Sidebar from "components/Sidebar/Sidebar";
 
-import { FEEDBACK_BUTTON_TEXT, PAGES } from "constants/common.constants";
+import {
+  EMAIL_TEXT,
+  FEEDBACK_BUTTON_TEXT,
+  PAGES,
+  PHONE_NUMBER,
+} from "constants/common.constants";
 
 import logoImage from "assets/logo.jpg";
 
@@ -61,23 +67,55 @@ const Header = () => {
             <MenuRoundedIcon fontSize="large" />
           </IconButton>
 
-          <Tabs
-            className={classes.tabs}
-            TabIndicatorProps={{
-              style: { display: "none" },
-            }}
-            value={value}
-            onChange={(e, value) => setValue(value)}
-          >
-            {PAGES.map((page, index) => (
-              <Tab
-                key={index}
-                className={classes.tab}
-                label={page.title}
-                onClick={() => router.push(page.link)}
-              />
-            ))}
-          </Tabs>
+          <Box className={classes.contactsInfoWrapper}>
+            <Box className={classes.contactsInfo}>
+              <Link className={classes.contactsInfoLink} href="">
+                <Typography className={classes.contactsInfoText} color="blue">
+                  Телеграмм
+                </Typography>
+              </Link>
+              <Link className={classes.contactsInfoLink} href="">
+                <Typography className={classes.contactsInfoText} color="green">
+                  WhatsApp
+                </Typography>
+              </Link>
+              <Link
+                className={classes.contactsInfoLink}
+                href="https://vk.com/sigmastoune"
+              >
+                <Typography
+                  className={classes.contactsInfoText}
+                  color="darkblue"
+                >
+                  VK В контакте
+                </Typography>
+              </Link>
+              <Typography className={classes.contactsInfoText} color="gray">
+                {EMAIL_TEXT}
+              </Typography>
+              <Typography className={classes.contactsInfoText} color="gray">
+                {PHONE_NUMBER}
+              </Typography>
+            </Box>
+
+            <Tabs
+              className={classes.tabs}
+              TabIndicatorProps={{
+                style: { display: "none" },
+              }}
+              value={value}
+              onChange={(e, value) => setValue(value)}
+            >
+              {PAGES.map((page, index) => (
+                <Tab
+                  key={index}
+                  className={classes.tab}
+                  label={page.title}
+                  onClick={() => router.push(page.link)}
+                />
+              ))}
+            </Tabs>
+          </Box>
           <Button
             className={classes.button}
             variant="contained"

@@ -30,6 +30,9 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     width: "50%",
     height: "100%",
+    [theme.breakpoints.down("md")]: {
+      width: "100%",
+    },
   },
   image: {
     position: "relative !important" as any,
