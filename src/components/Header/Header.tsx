@@ -24,6 +24,9 @@ import {
   FEEDBACK_BUTTON_TEXT,
   PAGES,
   PHONE_NUMBER,
+  SOCIAL_MEDIA_TELEGRAMM,
+  SOCIAL_MEDIA_VK,
+  SOCIAL_MEDIA_WHATSAPP,
 } from "constants/common.constants";
 
 import logoImage from "assets/logo.jpg";
@@ -71,12 +74,12 @@ const Header = () => {
             <Box className={classes.contactsInfo}>
               <Link className={classes.contactsInfoLink} href="">
                 <Typography className={classes.contactsInfoText} color="blue">
-                  Телеграмм
+                  {SOCIAL_MEDIA_TELEGRAMM}
                 </Typography>
               </Link>
               <Link className={classes.contactsInfoLink} href="">
                 <Typography className={classes.contactsInfoText} color="green">
-                  WhatsApp
+                  {SOCIAL_MEDIA_WHATSAPP}
                 </Typography>
               </Link>
               <Link
@@ -87,7 +90,7 @@ const Header = () => {
                   className={classes.contactsInfoText}
                   color="darkblue"
                 >
-                  VK В контакте
+                  {SOCIAL_MEDIA_VK}
                 </Typography>
               </Link>
               <Typography className={classes.contactsInfoText} color="gray">

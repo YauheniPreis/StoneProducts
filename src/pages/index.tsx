@@ -1,23 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Image from "next/image";
+import { useRouter } from "next/router";
 
-import { Box, Button, List, ListItem, Typography } from "@mui/material";
+import { Box, Button, Tab, Tabs, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
 import {
-  BENEFITS,
-  CALCULATE_COST_BUTTON_TEXT,
   MAIN_IMAGE,
   MAIN_TITLE,
+  PROMOTION_BUTTON_TEXT,
+  TERMS_AND_CONDITIONS,
 } from "constants/common.constants";
 
 const useStyles = makeStyles((theme) => ({
   homeContainer: {
-    position: "relative",
     display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
     width: "100%",
     height: "100%",
     [theme.breakpoints.down("md")]: {
@@ -28,81 +26,112 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    width: "50%",
-    height: "100%",
+    width: "80vw",
+    height: "80vh",
+    [theme.breakpoints.down("lg")]: {
+      width: "70vw",
+      height: "70vh",
+    },
     [theme.breakpoints.down("md")]: {
       width: "100%",
+      height: "100%",
     },
   },
   image: {
     position: "relative !important" as any,
+    objectFit: "cover",
+    [theme.breakpoints.down("md")]: {
+      objectFit: "contain",
+    },
   },
   contentContainer: {
     padding: "20px 40px",
     display: "flex",
     flexDirection: "column",
-    width: "50%",
-    height: "100%",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "20vw",
+    [theme.breakpoints.down("lg")]: {
+      width: "30vw",
+    },
     [theme.breakpoints.down("md")]: {
-      alignItems: "center",
-      width: "100%",
+      width: "100vw",
     },
   },
   title: {
+    marginTop: "50px",
     fontSize: "32px",
     fontWeight: 700,
     textTransform: "uppercase",
+    textAlign: "center",
     lineHeight: "45px",
     color: "#000",
     [theme.breakpoints.down("lg")]: {
       fontSize: "25px",
     },
     [theme.breakpoints.down("md")]: {
-      textAlign: "center",
+      marginTop: "30px",
     },
     [theme.breakpoints.down("sm")]: {
-      fontSize: "20px",
+      marginTop: "20px",
+      fontSize: "22px",
     },
   },
-  list: {
-    padding: "25px 25px",
-  },
-  listItem: {
-    padding: "0",
-    marginBottom: "15px",
-    "&:last-child": {
-      marginBottom: "0",
+  tabs: {
+    marginTop: "50px",
+    display: "flex",
+    [theme.breakpoints.down("md")]: {
+      marginTop: "20px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "0px",
     },
   },
-  listItemText: {
-    fontSize: "17px",
-    fontWeight: 400,
+  tab: {
+    margin: "12px 16px",
+    fontSize: "22px",
+    fontWeight: 600,
     color: "#000",
+    "&.Mui-selected": {
+      color: "#ed1a1a",
+    },
+    [theme.breakpoints.down("lg")]: {
+      padding: "4px 8px",
+      fontSize: "19px",
+    },
     [theme.breakpoints.down("sm")]: {
-      fontSize: "14px",
+      margin: "10px 14px",
+      fontSize: "17px",
+      fontWeight: 400,
     },
   },
   button: {
     height: "55px",
-    width: "380px",
+    width: "100%",
     borderRadius: "6px",
+    [theme.breakpoints.down("md")]: {
+      width: "60%",
+    },
     [theme.breakpoints.down("sm")]: {
       width: "100%",
     },
   },
   buttonText: {
-    fontSize: "15px",
+    fontSize: "23px",
     fontWeight: 600,
     lineHeight: 1.55,
     color: "#ffffff",
     [theme.breakpoints.down("sm")]: {
-      fontSize: "13px",
+      fontSize: "19px",
     },
   },
 }));
 
 const Home = () => {
+  const router = useRouter();
   const classes = useStyles();
+
+  const [value, setValue] = useState(false);
 
   return (
     <Box className={classes.homeContainer}>
@@ -111,20 +140,11 @@ const Home = () => {
           className={classes.image}
           src={MAIN_IMAGE.imgPath}
           alt={MAIN_IMAGE.label}
-          objectFit="contain"
-          fill
+          layout="fill"
         />
       </Box>
 
       <Box className={classes.contentContainer}>
-        <Typography className={classes.title}>{MAIN_TITLE}</Typography>
-        <List className={classes.list}>
-          {BENEFITS.map((text, index) => (
-            <ListItem key={index} className={classes.listItem}>
-              <Typography className={classes.listItemText}>{text}</Typography>
-            </ListItem>
-          ))}
-        </List>
         <Button
           variant="contained"
           size="large"
@@ -132,9 +152,31 @@ const Home = () => {
           className={classes.button}
         >
           <Typography className={classes.buttonText}>
-            {CALCULATE_COST_BUTTON_TEXT}
+            {PROMOTION_BUTTON_TEXT}
           </Typography>
         </Button>
+
+        <Typography className={classes.title}>{MAIN_TITLE}</Typography>
+
+        <Tabs
+          className={classes.tabs}
+          orientation="vertical"
+          TabIndicatorProps={{
+            style: { display: "none" },
+          }}
+          value={value}
+          onChange={(e, value) => setValue(value)}
+        >
+          {TERMS_AND_CONDITIONS.map((page, index) => (
+            <Tab
+              key={index}
+              className={classes.tab}
+              label={page.title}
+              onClick={() => router.push(page.link)}
+            />
+          ))}
+        </Tabs>
+        <Box />
       </Box>
     </Box>
   );
