@@ -85,6 +85,8 @@ const Header = () => {
               <Link
                 className={classes.contactsInfoLink}
                 href="https://vk.com/sigmastoune"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 <Typography
                   className={classes.contactsInfoText}

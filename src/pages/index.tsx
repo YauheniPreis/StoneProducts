@@ -88,8 +88,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   tab: {
-    margin: "12px 16px",
-    fontSize: "22px",
+    fontSize: "32px",
     fontWeight: 600,
     color: "#000",
     "&.Mui-selected": {
@@ -97,12 +96,11 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("lg")]: {
       padding: "4px 8px",
-      fontSize: "19px",
+      fontSize: "25px",
     },
     [theme.breakpoints.down("sm")]: {
       margin: "10px 14px",
-      fontSize: "17px",
-      fontWeight: 400,
+      fontSize: "22px",
     },
   },
   button: {
