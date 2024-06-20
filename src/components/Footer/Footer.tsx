@@ -86,7 +86,7 @@ const Footer = () => {
             <ListItemIcon className={classes.footerSocialMediaIconContainer}>
               <Link
                 className={classes.footerSocialMediaLink}
-                href="https://whatsapp.com/dl/"
+                href="https://wa.me/qr/SMBKGONXGSXGA1"
                 rel="noopener noreferrer"
                 target="_blank"
               >

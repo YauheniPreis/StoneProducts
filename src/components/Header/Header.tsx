@@ -84,7 +84,7 @@ const Header = () => {
               </Link>
               <Link
                 className={classes.contactsInfoLink}
-                href="https://whatsapp.com/dl/"
+                href="https://wa.me/qr/SMBKGONXGSXGA1"
                 rel="noopener noreferrer"
                 target="_blank"
               >
