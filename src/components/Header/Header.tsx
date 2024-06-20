@@ -72,12 +72,22 @@ const Header = () => {
 
           <Box className={classes.contactsInfoWrapper}>
             <Box className={classes.contactsInfo}>
-              <Link className={classes.contactsInfoLink} href="">
+              <Link
+                className={classes.contactsInfoLink}
+                href="https://telegram.me/sigmastoune"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 <Typography className={classes.contactsInfoText} color="blue">
                   {SOCIAL_MEDIA_TELEGRAMM}
                 </Typography>
               </Link>
-              <Link className={classes.contactsInfoLink} href="">
+              <Link
+                className={classes.contactsInfoLink}
+                href="https://whatsapp.com/dl/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 <Typography className={classes.contactsInfoText} color="green">
                   {SOCIAL_MEDIA_WHATSAPP}
                 </Typography>

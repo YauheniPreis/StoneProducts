@@ -1,6 +1,7 @@
 import React from "react";
 
 import NextImage from "next/image";
+import Link from "next/link";
 
 import TelegramIcon from "@mui/icons-material/Telegram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
@@ -73,10 +74,24 @@ const Footer = () => {
 
           <List className={classes.footerSocialMedias}>
             <ListItemIcon className={classes.footerSocialMediaIconContainer}>
-              <TelegramIcon className={classes.footerSocialMediaIcon} />
+              <Link
+                className={classes.footerSocialMediaLink}
+                href="https://telegram.me/sigmastoune"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <TelegramIcon className={classes.footerSocialMediaIcon} />
+              </Link>
             </ListItemIcon>
             <ListItemIcon className={classes.footerSocialMediaIconContainer}>
-              <WhatsAppIcon className={classes.footerSocialMediaIcon} />
+              <Link
+                className={classes.footerSocialMediaLink}
+                href="https://whatsapp.com/dl/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <WhatsAppIcon className={classes.footerSocialMediaIcon} />
+              </Link>
             </ListItemIcon>
           </List>
         </Stack>

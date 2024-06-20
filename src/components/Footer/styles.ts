@@ -96,6 +96,10 @@ const useStyles = makeStyles((theme) => ({
       marginRight: "0",
     },
   },
+  footerSocialMediaLink: {
+    height: 30,
+    width: 30,
+  },
   footerSocialMediaIcon: {
     height: 30,
     width: 30,
