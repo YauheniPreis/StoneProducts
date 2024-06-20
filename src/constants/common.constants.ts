@@ -15,7 +15,6 @@ export const PROMOTION_BUTTON_TEXT = "АКЦИЯ";
 export const CONTACTS_TITLE = "Контакты";
 export const EMAIL_TEXT = "prokamny@gmail.com";
 export const SOCIAL_MEDIA_TELEGRAMM = "Телеграмм";
-export const SOCIAL_MEDIA_WHATSAPP = "WhatsApp";
 export const SOCIAL_MEDIA_VK = "VK В контакте";
 export const OPERATING_MODE_TITLE = "Режим работы";
 export const OPERATING_MODE_TEXT = "Пн-Пт с 09:00 до 19:00";

@@ -26,7 +26,6 @@ import {
   PHONE_NUMBER,
   SOCIAL_MEDIA_TELEGRAMM,
   SOCIAL_MEDIA_VK,
-  SOCIAL_MEDIA_WHATSAPP,
 } from "constants/common.constants";
 
 import logoImage from "assets/logo.jpg";
@@ -80,16 +79,6 @@ const Header = () => {
               >
                 <Typography className={classes.contactsInfoText} color="blue">
                   {SOCIAL_MEDIA_TELEGRAMM}
-                </Typography>
-              </Link>
-              <Link
-                className={classes.contactsInfoLink}
-                href="https://wa.me/qr/SMBKGONXGSXGA1"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <Typography className={classes.contactsInfoText} color="green">
-                  {SOCIAL_MEDIA_WHATSAPP}
                 </Typography>
               </Link>
               <Link

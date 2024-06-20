@@ -4,7 +4,6 @@ import NextImage from "next/image";
 import Link from "next/link";
 
 import TelegramIcon from "@mui/icons-material/Telegram";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import {
   Box,
   Divider,
@@ -81,16 +80,6 @@ const Footer = () => {
                 target="_blank"
               >
                 <TelegramIcon className={classes.footerSocialMediaIcon} />
-              </Link>
-            </ListItemIcon>
-            <ListItemIcon className={classes.footerSocialMediaIconContainer}>
-              <Link
-                className={classes.footerSocialMediaLink}
-                href="https://wa.me/qr/SMBKGONXGSXGA1"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <WhatsAppIcon className={classes.footerSocialMediaIcon} />
               </Link>
             </ListItemIcon>
           </List>
