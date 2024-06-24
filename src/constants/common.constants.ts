@@ -222,3 +222,26 @@ export const PRODUCTS_WINDOW_SILLS_IMAGES = [
     imgPath: "/products/window-sills/window-sills-6.jpeg",
   },
 ];
+export const STONES_TITLE = "Каталог Камня";
+export const STONES_IMAGES = [
+  {
+    label: "stone-1.jpeg",
+    imgPath: "/stones/stone-1.jpeg",
+  },
+  {
+    label: "stone-2.jpeg",
+    imgPath: "/stones/stone-2.jpeg",
+  },
+  {
+    label: "stone-3.jpeg",
+    imgPath: "/stones/stone-3.jpeg",
+  },
+  {
+    label: "stone-4.jpeg",
+    imgPath: "/stones/stone-4.jpeg",
+  },
+  {
+    label: "stone-5.jpeg",
+    imgPath: "/stones/stone-5.jpeg",
+  },
+];

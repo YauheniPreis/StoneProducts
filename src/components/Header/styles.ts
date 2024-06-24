@@ -4,7 +4,7 @@ const useStyles = makeStyles((theme) => ({
   header: {
     display: "flex",
     justifyContent: "center",
-    height: "84px",
+    height: "100px",
     width: "100%",
     backgroundColor: "#fff",
   },
@@ -45,15 +45,18 @@ const useStyles = makeStyles((theme) => ({
   contactsInfoWrapper: {
     display: "flex",
     flexDirection: "column",
+    width: "60%",
+    [theme.breakpoints.down("md")]: {
+      width: "0",
+    },
   },
   contactsInfo: {
     marginLeft: "16px",
     display: "flex",
     alignItems: "center",
-    gap: "10px",
+    justifyContent: "space-evenly",
     [theme.breakpoints.down("lg")]: {
       marginLeft: "0",
-      gap: "0",
     },
     [theme.breakpoints.down("md")]: {
       display: "none",
@@ -72,6 +75,7 @@ const useStyles = makeStyles((theme) => ({
   },
   tabs: {
     display: "flex",
+    width: "100%",
     [theme.breakpoints.down("md")]: {
       display: "none",
     },
@@ -87,8 +91,8 @@ const useStyles = makeStyles((theme) => ({
   logo: {
     marginRight: "10px",
     position: "relative",
-    height: "58px",
-    minWidth: "85px",
+    height: "74px",
+    minWidth: "101px",
   },
 }));
 

@@ -109,6 +109,7 @@ const Header = () => {
               }}
               value={value}
               onChange={(e, value) => setValue(value)}
+              variant="fullWidth"
             >
               {PAGES.map((page, index) => (
                 <Tab
