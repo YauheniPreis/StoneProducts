@@ -4,7 +4,7 @@ const useStyles = makeStyles((theme) => ({
   header: {
     display: "flex",
     justifyContent: "center",
-    height: "100px",
+    height: "110px",
     width: "100%",
     backgroundColor: "#fff",
   },
@@ -12,18 +12,6 @@ const useStyles = makeStyles((theme) => ({
     padding: "0 20px",
     [theme.breakpoints.down("lg")]: {
       padding: "0 15px",
-    },
-  },
-  tab: {
-    fontSize: "15px",
-    fontWeight: 600,
-    color: "#000",
-    "&.Mui-selected": {
-      color: "#ed1a1a",
-    },
-    [theme.breakpoints.down("lg")]: {
-      padding: "4px 8px",
-      fontSize: "13px",
     },
   },
   button: {
@@ -80,6 +68,35 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
+  tab: {
+    fontSize: "15px",
+    fontWeight: 600,
+    color: "#000",
+    "&.Mui-selected": {
+      color: "#ed1a1a",
+    },
+    [theme.breakpoints.down("lg")]: {
+      padding: "4px 8px",
+      fontSize: "13px",
+    },
+  },
+  ourProductionContainer: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    [theme.breakpoints.down("md")]: {
+      display: "none",
+    },
+  },
+  ourProductionText: {
+    fontSize: "15px",
+    fontWeight: 600,
+    textAlign: "center",
+    color: "#000",
+    [theme.breakpoints.down("lg")]: {
+      fontSize: "12px",
+    },
+  },
   iconButton: {
     display: "block",
     marginLeft: "auto",
@@ -91,8 +108,8 @@ const useStyles = makeStyles((theme) => ({
   logo: {
     marginRight: "10px",
     position: "relative",
-    height: "74px",
-    minWidth: "101px",
+    height: "84px",
+    minWidth: "111px",
   },
 }));
 

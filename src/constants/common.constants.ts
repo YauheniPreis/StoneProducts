@@ -8,10 +8,11 @@ export const TERMS_AND_CONDITIONS = [
   { title: "ДОСТАВКА", link: "/delivery" },
   { title: "УСТАНОВКА", link: "/installation" },
 ];
-export const MAIN_TITLE = "УСЛОВИЯ И СРОКИ";
 export const PHONE_NUMBER = "+7 (925) 809-4985";
 export const FEEDBACK_BUTTON_TEXT = "Заказать расчёт";
-export const PROMOTION_BUTTON_TEXT = "АКЦИЯ";
+export const PROMOTION_BUTTON_TEXT = "Акция! Доставка по Москве бесплатно!";
+export const OUR_PRODUCTION_TEXT =
+  "У НАС СОБСТВЕННОЕ ПРОИЗВОДСТВО И СВОЙ КОЛЛЕКТИВ ЗАМЕРА И УСТАНОВКИ";
 export const CONTACTS_TITLE = "Контакты";
 export const EMAIL_TEXT = "prokamny@gmail.com";
 export const SOCIAL_MEDIA_TELEGRAMM = "Телеграмм";

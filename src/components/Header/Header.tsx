@@ -22,6 +22,7 @@ import Sidebar from "components/Sidebar/Sidebar";
 import {
   EMAIL_TEXT,
   FEEDBACK_BUTTON_TEXT,
+  OUR_PRODUCTION_TEXT,
   PAGES,
   PHONE_NUMBER,
   SOCIAL_MEDIA_TELEGRAMM,
@@ -120,6 +121,12 @@ const Header = () => {
                 />
               ))}
             </Tabs>
+
+            <Box className={classes.ourProductionContainer}>
+              <Typography className={classes.ourProductionText}>
+                {OUR_PRODUCTION_TEXT}
+              </Typography>
+            </Box>
           </Box>
           <Button
             className={classes.button}

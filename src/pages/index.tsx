@@ -3,12 +3,11 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-import { Box, Button, Tab, Tabs, Typography } from "@mui/material";
+import { Box, Tab, Tabs, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
 import {
   MAIN_IMAGE,
-  MAIN_TITLE,
   PROMOTION_BUTTON_TEXT,
   TERMS_AND_CONDITIONS,
 } from "constants/common.constants";
@@ -59,21 +58,15 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   title: {
-    marginTop: "50px",
     fontSize: "32px",
     fontWeight: 700,
     textTransform: "uppercase",
     textAlign: "center",
     lineHeight: "45px",
-    color: "#000",
     [theme.breakpoints.down("lg")]: {
       fontSize: "25px",
     },
-    [theme.breakpoints.down("md")]: {
-      marginTop: "30px",
-    },
     [theme.breakpoints.down("sm")]: {
-      marginTop: "20px",
       fontSize: "22px",
     },
   },
@@ -103,26 +96,6 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "22px",
     },
   },
-  button: {
-    height: "55px",
-    width: "100%",
-    borderRadius: "6px",
-    [theme.breakpoints.down("md")]: {
-      width: "60%",
-    },
-    [theme.breakpoints.down("sm")]: {
-      width: "100%",
-    },
-  },
-  buttonText: {
-    fontSize: "23px",
-    fontWeight: 600,
-    lineHeight: 1.55,
-    color: "#ffffff",
-    [theme.breakpoints.down("sm")]: {
-      fontSize: "19px",
-    },
-  },
 }));
 
 const Home = () => {
@@ -143,18 +116,9 @@ const Home = () => {
       </Box>
 
       <Box className={classes.contentContainer}>
-        <Button
-          variant="contained"
-          size="large"
-          color="error"
-          className={classes.button}
-        >
-          <Typography className={classes.buttonText}>
-            {PROMOTION_BUTTON_TEXT}
-          </Typography>
-        </Button>
-
-        <Typography className={classes.title}>{MAIN_TITLE}</Typography>
+        <Typography className={classes.title} color="red">
+          {PROMOTION_BUTTON_TEXT}
+        </Typography>
 
         <Tabs
           className={classes.tabs}
@@ -174,6 +138,7 @@ const Home = () => {
             />
           ))}
         </Tabs>
+
         <Box />
       </Box>
     </Box>
