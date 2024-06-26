@@ -84,7 +84,7 @@ const Header = () => {
               </Link>
               <Link
                 className={classes.contactsInfoLink}
-                href="https://vk.com/sigmastoune"
+                href="https://vk.com/sigmastone"
                 rel="noopener noreferrer"
                 target="_blank"
               >
