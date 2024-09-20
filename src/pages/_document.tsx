@@ -18,11 +18,15 @@ import {
 } from "@mui/material-nextjs/v14-pagesRouter";
 import { ServerStyleSheets as JSSServerStyleSheets } from "@mui/styles";
 
+import { BASE_METADATA } from "constants/common.constants";
+
 const Document = (props: DocumentProps & DocumentHeadTagsProps) => {
   return (
     <Html>
       <Head>
         <DocumentHeadTags {...props} />
+        <title>{BASE_METADATA.title}</title>
+        <meta name="keywords" content={BASE_METADATA.keywords} />
       </Head>
       <body>
         <Main />

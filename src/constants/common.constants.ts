@@ -8,7 +8,7 @@ export const TERMS_AND_CONDITIONS = [
   { title: "ДОСТАВКА", link: "/delivery" },
   { title: "УСТАНОВКА", link: "/installation" },
 ];
-export const PHONE_NUMBER = "+7 (925) 809-4985";
+export const PHONE_NUMBER = "+7 (936) 257-77-94";
 export const FEEDBACK_BUTTON_TEXT = "Заказать расчёт";
 export const PROMOTION_BUTTON_TEXT = "Акция! Доставка по Москве бесплатно!";
 export const OUR_PRODUCTION_TEXT =
@@ -246,3 +246,9 @@ export const STONES_IMAGES = [
     imgPath: "/stones/stone-5.jpeg",
   },
 ];
+
+export const BASE_METADATA = {
+  title: "Изделия из искусственного камня",
+  keywords:
+    "Мы предлагаем: столешницы из искусственного камня по индивидуальному проекту, на заказ, разной формы и сложности, подоконники по индивидуальным размерам, барные стойки, острова, столешницы в ванную комнату, лестницы, офисные решения, ресепшн. Короткие сроки исполнения заказа.",
+};
