@@ -247,6 +247,21 @@ export const STONES_IMAGES = [
   },
 ];
 
+export const INSTALLATION_IMAGE = {
+  label: "installation.jpeg",
+  imgPath: "/installation/installation.jpeg",
+};
+
+export const DELIVERY_IMAGE = {
+  label: "delivery.jpeg",
+  imgPath: "/delivery/delivery.jpeg",
+};
+
+export const FROZE_IMAGE = {
+  label: "froze.jpeg",
+  imgPath: "/froze/froze.jpeg",
+};
+
 export const BASE_METADATA = {
   title: "Изделия из искусственного камня",
   keywords:

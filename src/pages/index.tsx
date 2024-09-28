@@ -58,16 +58,16 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   title: {
-    fontSize: "32px",
+    fontSize: "28px",
     fontWeight: 700,
     textTransform: "uppercase",
     textAlign: "center",
     lineHeight: "45px",
     [theme.breakpoints.down("lg")]: {
-      fontSize: "25px",
+      fontSize: "22px",
     },
     [theme.breakpoints.down("sm")]: {
-      fontSize: "22px",
+      fontSize: "19px",
     },
   },
   tabs: {
