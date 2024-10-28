@@ -10,6 +10,7 @@ import {
   Main,
   NextScript,
 } from "next/document";
+import Script from "next/script";
 
 import {
   DocumentHeadTags,
@@ -31,6 +32,14 @@ const Document = (props: DocumentProps & DocumentHeadTagsProps) => {
       <body>
         <Main />
         <NextScript />
+        <Script id="live-internet-counter" strategy="afterInteractive">
+          {`new Image().src = "https://counter.yadro.ru/hit?r"+
+            escape(document.referrer)+((typeof(screen)=="undefined")?"":
+            ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+            screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+            ";h"+escape(document.title.substring(0,150))+
+            ";"+Math.random();`}
+        </Script>
       </body>
     </Html>
   );

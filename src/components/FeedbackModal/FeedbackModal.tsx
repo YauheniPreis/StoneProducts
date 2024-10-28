@@ -14,7 +14,9 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import ym from "react-yandex-metrika";
 
+import { enableYM } from "../YandexMetrika/YandexMetrika";
 import { useStyles } from "./styles";
 
 interface IFeedbackModalProps {
@@ -35,6 +37,7 @@ const FeedbackModal = ({ open, onClose }: IFeedbackModalProps) => {
 
     let result;
     try {
+      enableYM && ym("reachGoal", "1234567");
       const data = await fetch("/api/email", {
         method: "POST",
         body: JSON.stringify(formValues),
@@ -86,6 +89,7 @@ const FeedbackModal = ({ open, onClose }: IFeedbackModalProps) => {
             variant="contained"
             size="large"
             color="error"
+            disabled={!name || !phoneNumber}
             onClick={sendEmail}
           >
             <Typography className={classes.buttonText}>Отправить</Typography>

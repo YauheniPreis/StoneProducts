@@ -8,6 +8,7 @@ import { Theme, createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@mui/styles";
 
 import Layout from "components/Layout/Layout";
+import YandexMetrika from "components/YandexMetrika/YandexMetrika";
 
 declare module "@mui/styles/defaultTheme" {
   // eslint-disable-next-line no-unused-vars
@@ -30,9 +31,11 @@ const App = ({ Component, pageProps, ...props }: AppProps) => {
     <AppCacheProvider {...props}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <YandexMetrika>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </YandexMetrika>
       </ThemeProvider>
     </AppCacheProvider>
   );
