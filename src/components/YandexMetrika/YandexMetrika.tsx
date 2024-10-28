@@ -1,7 +1,6 @@
 import React, { PropsWithChildren, useCallback, useEffect } from "react";
 
 import { usePathname, useSearchParams } from "next/navigation";
-import { Router } from "next/router";
 
 import ym, { YMInitializer } from "react-yandex-metrika";
 
@@ -19,9 +18,8 @@ const YandexMetrika = ({ children }: PropsWithChildren) => {
   }, []);
 
   useEffect(() => {
-    hit(pathname + searchParams);
-    Router.events.on("routeChangeComplete", (url: string) => hit(url));
-  }, []);
+    hit(`${pathname}?${searchParams}`);
+  }, [pathname, searchParams, hit]);
 
   return (
     <>
