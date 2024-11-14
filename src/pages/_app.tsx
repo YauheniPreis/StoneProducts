@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 
 import type { AppProps } from "next/app";
+import dynamic from "next/dynamic";
 
 import { CssBaseline } from "@mui/material";
 import { AppCacheProvider } from "@mui/material-nextjs/v14-pagesRouter";
@@ -8,7 +9,6 @@ import { Theme, createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@mui/styles";
 
 import Layout from "components/Layout/Layout";
-import YandexMetrika from "components/YandexMetrika/YandexMetrika";
 
 declare module "@mui/styles/defaultTheme" {
   // eslint-disable-next-line no-unused-vars
@@ -16,6 +16,12 @@ declare module "@mui/styles/defaultTheme" {
 }
 
 const theme = createTheme();
+const YandexMetrika = dynamic(
+  () => import("components/YandexMetrika/YandexMetrika"),
+  {
+    ssr: false,
+  }
+);
 
 const App = ({ Component, pageProps, ...props }: AppProps) => {
   useEffect(() => {

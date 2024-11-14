@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   imageContainer: {
+    position: "relative",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -112,6 +113,7 @@ const Home = () => {
           src={MAIN_IMAGE.imgPath}
           alt={MAIN_IMAGE.label}
           layout="fill"
+          priority={true}
         />
       </Box>
 
