@@ -13,6 +13,7 @@ const YandexMetrika = ({ children }: PropsWithChildren) => {
   const searchParams = useSearchParams();
 
   const hit = useCallback((url: string) => {
+    console.log("KEK", enableYM);
     if (enableYM) {
       ym("hit", url);
     }
