@@ -1,4 +1,4 @@
-import React, { Children, ComponentType } from "react";
+import React, { Children, ComponentType, Suspense } from "react";
 
 import { AppProps } from "next/app";
 import {
@@ -19,6 +19,8 @@ import {
 } from "@mui/material-nextjs/v14-pagesRouter";
 import { ServerStyleSheets as JSSServerStyleSheets } from "@mui/styles";
 
+import YandexMetrika from "components/YandexMetrika/YandexMetrika";
+
 import { BASE_METADATA } from "constants/common.constants";
 
 const Document = (props: DocumentProps & DocumentHeadTagsProps) => {
@@ -32,6 +34,28 @@ const Document = (props: DocumentProps & DocumentHeadTagsProps) => {
       <body>
         <Main />
         <NextScript />
+        <Script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+          m[i].l=1*new Date();
+          for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+          k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+          (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+          ym(${process.env.YM_ID}, "init", {
+                defer:true,
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true
+          });`,
+          }}
+        ></Script>
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html: `<div><img src="https://mc.yandex.ru/watch/98612560" style="position:absolute; left:-9999px;" alt="" /></div>`,
+          }}
+        ></noscript>
         <Script id="live-internet-counter" strategy="afterInteractive">
           {`new Image().src = "https://counter.yadro.ru/hit?r"+
             escape(document.referrer)+((typeof(screen)=="undefined")?"":
@@ -40,6 +64,9 @@ const Document = (props: DocumentProps & DocumentHeadTagsProps) => {
             ";h"+escape(document.title.substring(0,150))+
             ";"+Math.random();`}
         </Script>
+        <Suspense>
+          <YandexMetrika />
+        </Suspense>
       </body>
     </Html>
   );

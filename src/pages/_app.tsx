@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 
 import type { AppProps } from "next/app";
-import dynamic from "next/dynamic";
 
 import { CssBaseline } from "@mui/material";
 import { AppCacheProvider } from "@mui/material-nextjs/v14-pagesRouter";
@@ -16,12 +15,6 @@ declare module "@mui/styles/defaultTheme" {
 }
 
 const theme = createTheme();
-const YandexMetrika = dynamic(
-  () => import("components/YandexMetrika/YandexMetrika"),
-  {
-    ssr: false,
-  }
-);
 
 const App = ({ Component, pageProps, ...props }: AppProps) => {
   useEffect(() => {
@@ -37,11 +30,9 @@ const App = ({ Component, pageProps, ...props }: AppProps) => {
     <AppCacheProvider {...props}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <YandexMetrika>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </YandexMetrika>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </ThemeProvider>
     </AppCacheProvider>
   );
