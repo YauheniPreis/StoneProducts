@@ -17,8 +17,8 @@ const YandexMetrika = () => {
   const prevSearchParams = usePrevious(searchParams);
 
   const hit = useCallback((url: string) => {
-    if (enableYM && window.ym) {
-      window.ym(process.env.YM_ID, "hit", url);
+    if (enableYM) {
+      //   ym(process.env.YM_ID, "hit", url);
     }
   }, []);
 

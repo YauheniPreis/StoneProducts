@@ -36,8 +36,8 @@ const FeedbackModal = ({ open, onClose }: IFeedbackModalProps) => {
 
     let result;
     try {
-      if (enableYM && window.ym) {
-        window.ym(process.env.YM_ID, "reachGoal", "1234567");
+      if (enableYM) {
+        // window.ym(process.env.YM_ID, "reachGoal", "1234567");
       }
       const data = await fetch("/api/email", {
         method: "POST",
