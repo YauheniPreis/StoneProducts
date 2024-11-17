@@ -56,6 +56,7 @@ const FeedbackModal = ({ open, onClose }: IFeedbackModalProps) => {
       result = { message: `Failed: ${error}` };
     }
 
+    onClose();
     alert(result.message);
   };
 
