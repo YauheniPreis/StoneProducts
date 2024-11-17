@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
 
 import type { AppProps } from "next/app";
 
@@ -8,6 +8,7 @@ import { Theme, createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@mui/styles";
 
 import Layout from "components/Layout/Layout";
+import YandexMetrika from "components/YandexMetrika/YandexMetrika";
 
 declare module "@mui/styles/defaultTheme" {
   // eslint-disable-next-line no-unused-vars
@@ -32,6 +33,9 @@ const App = ({ Component, pageProps, ...props }: AppProps) => {
         <CssBaseline />
         <Layout>
           <Component {...pageProps} />
+          <Suspense>
+            <YandexMetrika />
+          </Suspense>
         </Layout>
       </ThemeProvider>
     </AppCacheProvider>

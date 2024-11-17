@@ -1,4 +1,4 @@
-import React, { Children, ComponentType, Suspense } from "react";
+import React, { Children, ComponentType } from "react";
 
 import { AppProps } from "next/app";
 import {
@@ -18,8 +18,6 @@ import {
   documentGetInitialProps,
 } from "@mui/material-nextjs/v14-pagesRouter";
 import { ServerStyleSheets as JSSServerStyleSheets } from "@mui/styles";
-
-import YandexMetrika from "components/YandexMetrika/YandexMetrika";
 
 import { BASE_METADATA } from "constants/common.constants";
 
@@ -69,9 +67,6 @@ const Document = (props: DocumentProps & DocumentHeadTagsProps) => {
             ";"+Math.random();`,
           }}
         ></Script>
-        <Suspense>
-          <YandexMetrika />
-        </Suspense>
       </body>
     </Html>
   );
