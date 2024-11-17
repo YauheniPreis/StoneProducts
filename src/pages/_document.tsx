@@ -56,7 +56,6 @@ const Document = (props: DocumentProps & DocumentHeadTagsProps) => {
           }}
         ></noscript>
         <Script
-          id="live-internet-counter"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `new Image().src = "https://counter.yadro.ru/hit?r"+

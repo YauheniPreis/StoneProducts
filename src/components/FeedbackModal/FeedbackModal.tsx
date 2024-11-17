@@ -54,9 +54,11 @@ const FeedbackModal = ({ open, onClose }: IFeedbackModalProps) => {
       result = await data.json();
     } catch (error) {
       result = { message: `Failed: ${error}` };
+    } finally {
+      setName("");
+      setPhoneNumber("");
     }
 
-    onClose();
     alert(result.message);
   };
 
