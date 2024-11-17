@@ -1,3 +1,5 @@
+"use client";
+
 import { useCallback, useEffect, useRef } from "react";
 
 import { usePathname, useSearchParams } from "next/navigation";
@@ -18,7 +20,9 @@ const YandexMetrika = () => {
 
   const hit = useCallback((url: string) => {
     if (enableYM) {
-      //   ym(process.env.YM_ID, "hit", url);
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      window.ym(process.env.YM_ID, "hit", url);
     }
   }, []);
 

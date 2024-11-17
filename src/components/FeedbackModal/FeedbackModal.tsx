@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 
 import CloseIcon from "@mui/icons-material/Close";
@@ -37,7 +39,9 @@ const FeedbackModal = ({ open, onClose }: IFeedbackModalProps) => {
     let result;
     try {
       if (enableYM) {
-        // window.ym(process.env.YM_ID, "reachGoal", "1234567");
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        window.ym(process.env.YM_ID, "reachGoal", "1234567");
       }
       const data = await fetch("/api/email", {
         method: "POST",
