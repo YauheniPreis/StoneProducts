@@ -57,14 +57,18 @@ const Document = (props: DocumentProps & DocumentHeadTagsProps) => {
             __html: `<div><img src="https://mc.yandex.ru/watch/98612560" style="position:absolute; left:-9999px;" alt="" /></div>`,
           }}
         ></noscript>
-        <Script id="live-internet-counter" strategy="afterInteractive">
-          {`new Image().src = "https://counter.yadro.ru/hit?r"+
+        <Script
+          id="live-internet-counter"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `new Image().src = "https://counter.yadro.ru/hit?r"+
             escape(document.referrer)+((typeof(screen)=="undefined")?"":
             ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
             screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
             ";h"+escape(document.title.substring(0,150))+
-            ";"+Math.random();`}
-        </Script>
+            ";"+Math.random();`,
+          }}
+        ></Script>
         <Suspense>
           <YandexMetrika />
         </Suspense>
