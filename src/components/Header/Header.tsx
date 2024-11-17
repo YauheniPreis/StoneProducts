@@ -22,14 +22,13 @@ import Sidebar from "components/Sidebar/Sidebar";
 import {
   EMAIL_TEXT,
   FEEDBACK_BUTTON_TEXT,
+  LOGO_IMAGE,
   OUR_PRODUCTION_TEXT,
   PAGES,
   PHONE_NUMBER,
   SOCIAL_MEDIA_TELEGRAMM,
   SOCIAL_MEDIA_VK,
 } from "constants/common.constants";
-
-import logoImage from "assets/logo.jpg";
 
 import { useStyles } from "./styles";
 
@@ -52,7 +51,7 @@ const Header = () => {
         <Toolbar className={classes.toolBar}>
           <Box className={classes.logo}>
             <NextImage
-              src={logoImage}
+              src={LOGO_IMAGE}
               fill
               alt="logo"
               onClick={handleOnClickImage}

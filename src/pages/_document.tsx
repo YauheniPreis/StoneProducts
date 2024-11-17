@@ -19,7 +19,7 @@ import {
 } from "@mui/material-nextjs/v14-pagesRouter";
 import { ServerStyleSheets as JSSServerStyleSheets } from "@mui/styles";
 
-import { BASE_METADATA } from "constants/common.constants";
+import { BASE_METADATA, LOGO_IMAGE } from "constants/common.constants";
 
 const Document = (props: DocumentProps & DocumentHeadTagsProps) => {
   return (
@@ -28,6 +28,7 @@ const Document = (props: DocumentProps & DocumentHeadTagsProps) => {
         <DocumentHeadTags {...props} />
         <title>{BASE_METADATA.title}</title>
         <meta name="keywords" content={BASE_METADATA.keywords} />
+        <link rel="icon" href={LOGO_IMAGE} sizes="any" />
       </Head>
       <body>
         <Main />

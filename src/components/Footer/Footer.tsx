@@ -17,12 +17,11 @@ import {
   CONTACTS_TITLE,
   COPYRIGHT_TEXT,
   EMAIL_TEXT,
+  LOGO_IMAGE,
   OPERATING_MODE_TEXT,
   OPERATING_MODE_TITLE,
   PHONE_NUMBER,
 } from "constants/common.constants";
-
-import logoImage from "assets/logo.jpg";
 
 import { useStyles } from "./styles";
 
@@ -58,7 +57,7 @@ const Footer = () => {
           </Box>
 
           <Box className={classes.footerCompanyIcon}>
-            <NextImage src={logoImage} fill alt="logo" />
+            <NextImage src={LOGO_IMAGE} fill alt="logo" />
           </Box>
         </Stack>
       </Box>

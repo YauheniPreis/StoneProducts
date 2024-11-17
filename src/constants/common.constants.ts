@@ -20,6 +20,7 @@ export const SOCIAL_MEDIA_VK = "VK В контакте";
 export const OPERATING_MODE_TITLE = "Режим работы";
 export const OPERATING_MODE_TEXT = "Пн-Пт с 09:00 до 19:00";
 export const COPYRIGHT_TEXT = "Copyright © 2024 Sigma Stone";
+export const LOGO_IMAGE = "/logo.jpg";
 export const MAIN_IMAGE = {
   label: "main.jpeg",
   imgPath: "/main.jpeg",
